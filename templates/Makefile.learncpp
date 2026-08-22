@@ -1,5 +1,15 @@
 CXX = g++
-CXXFLAGS = -std=c++23 -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wshadow
+
+CXXFLAGS = -std=c++23 \
+           -Wall \
+           -Wextra \
+           -Weffc++ \
+           -Wconversion \
+           -Wsign-conversion \
+           -Wpedantic \
+           -pedantic-errors \
+           -Wshadow
+
 TARGET = build/main
 SRC = main.cpp
 

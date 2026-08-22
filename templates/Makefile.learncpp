@@ -1,6 +1,5 @@
-
 CXX = g++
-CXXFLAGS = -std=c++23 -Wall -Wextra -Wpedantic -pedantic-errors
+CXXFLAGS = -std=c++23 -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wshadow
 TARGET = build/main
 SRC = main.cpp
 
@@ -13,5 +12,3 @@ run: all
 
 clean:
 	rm -rf build
-
-

@@ -102,6 +102,168 @@
 *Q7:* What is an integer
     - An integer is a number that can be written without a fractional component
 
+## 1.4 - Variable Assignment and Initialization
+
+- Variable Assignment
+
+    - The `=` operator is called the assignment operator
+
+    ```cpp
+    int width;  // define an integer variable named width
+    width = 5;  // assignment of value 5 into variable width
+    // Variable width now has value 5
+    ```
+
+    - Assignment copies the value on the right-hand side of the *= operator* to the variable on the left-hand side of the operator. This is called **copy-assignment**
+
+- Variable Initialization 
+
+   - The process of specifying an initial value for an object is called **initialization**, and the syntax used to initialize an object is called an initializer 
+
+- Default-Initialization
+
+    - When no initializer is provided this is called **default-initialization**
+    
+    ```cpp
+    int a;  // default-initialization
+    ```
+
+- Copy-Initialization
+
+    ```cpp
+    int width = 5;  // copy-initialization of value 5 into variable width
+    ```
+
+    - Copies value on the rhs of equals into the variable on the lhs
+
+    - Also used whenever values are implicitly copied, such as when passing arguments to a fucntion by value, returning from a function by value, or catching exceptions by value
+
+- Direct-Initialization
+
+    - When an initial value is provided inside parenthesis, this is called **direct-initialization**
+
+    ```cpp
+    int width ( 5 );    // direct initialization of value 5 into variable width
+    ```
+
+    - Also used when values are explicitly cast to another type
+
+- List-Initialization
+
+    ```cpp
+    int width { 5 };    // direct-list-initialization (preferred)
+    int height = { 6 }  // copy-list-initialization (rarely used)
+    ```
+
+    - Works in almost all cases, behaves consistently, and has unambiguous syntax
+
+    - *Key Insight:* When we see curly braces, we know we're list-initializing an object
+
+    - Provides a way to initialize objects with a list of values rather than a single value
+
+- List-initialization disallows narrowing conversions
+
+    - If you try to list-initialize a variable using value that the variable can not safely hold, the compiler is required to produce a diagnostic to notify you
+
+    ``` cpp
+    int w1 { 4.5 }; // compile error: list-init does not allow narrowing conversion
+    
+    int w2 = 4.5;   // compiles
+    int w3 (4.5);   // compiles
+    ```
+
+    - applies only to initialization, not to any subsequent assignments
+
+- Value-initialization and zero-initialization
+
+    ```cpp
+    int width {}; // value-initialization / zero-initialization to value 0
+    ```
+
+    - Will implicitly initialize the variable to zero (or whatever value is closest to zero for a given type)
+
+- List-initialization is the preferred form of initialization in modern C++
+
+- Initialize your variables
+
+- Instantiation
+
+- Initializing multiple variables
+
+- Unused initialized variables warnings
+
+- The `[[maybe_unused]]` attribute
+
+    ```cpp
+    #include <iostream>
+
+    int main()
+    {
+        [[maybe_unused]] double pi { 3.14159 };  // Don't complain if pi is unused
+        [[maybe_unused]] double gravity { 9.8 }; // Don't complain if gravity is unused
+        [[maybe_unused]] double phi { 1.61803 }; // Don't complain if phi is unused
+    
+        std::cout << pi << '\n';
+        std::cout << phi << '\n';
+    
+        // The compiler will no longer warn about gravity not being used
+    
+        return 0;
+    }
+    ```
+
+    - Tell the compiler that we’re okay with a variable being unused
+
+    - Should be applied selectively to variable that reason for being unsused
+
+*Q1:* What is the difference between intitalization and assignment?
+
+- Initialization gives a variable an initial value at the point when it is created.
+
+- Assignment gives a variable a value at some point after the variable is created.
+
+*Q2:* What form of initialization should you prefer when you want to initialize a variable with a specific value?
+
+- Direct-list-initialization
+
+*Q3:* What are default-initialization and value-initialization? What is the behavior of each? Which should you prefer?
+
+- Default-initialization is when a variable initializzzation has no initializer. In most cases, the variable is left with an indeterminate value
+
+- Value-initialization is when a variable initialization has an empty brace initializer. In most cases this will perform zero-initialization
+
+- You should prefer value-initialization, as it initializes the variable to a consistent value
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

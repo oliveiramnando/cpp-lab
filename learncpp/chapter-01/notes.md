@@ -34,6 +34,7 @@
 *Q7:* What is the C++ Standard Library?
 - A library file is a collection of precompiled code that has been "packaged up" for reuse in other programs. The C++ Standard Library is a library that ships with C++.It contains additional functionality to use in your programs.
 
+## 1.2 - Comments
 
 ## 1.3 - Introduction to Objects and Variables
 
@@ -234,8 +235,19 @@
 
 - You should prefer value-initialization, as it initializes the variable to a consistent value
 
- 
- 
+## 1.5 - Introduction to iostream: cout, cin, endl;
+
+- *Best Practice:* Prefer `\n` over `strd::endl` when outputting text to the console
+
+- `operator<<` vs `operator>>`
+
+    - `std::cin` and `std::cout` always go on the lhs of the perator
+    
+    - `<<` is used with `std::cout`, and shows the direction that data is moving
+
+    - `>>` is used with `std::cin`, and show the direction that data is moving
+
+## 1.6 - Uninitialized variables and undefined behavior
  
  
  

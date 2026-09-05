@@ -316,5 +316,26 @@
 
 ## 1.9 - Introduction to Literals and Operators
 
+- Literals
+
+    - A **literal** (aka **literal constant**) is a fixed value that has been inserted directly into the source code.
+
+    - The value of a literal is fixed and cannot be changed
+
+    - *Key Insight:* Literals are values that are inserted directly into the source code. These value usually appear directly in the executable code (unless they are optimized out). Objects and variables represent memeory locations that hold values. These values can be fetched on demand.
+
+- Operators
+
+    - An **operation** is a process involving zero or more input values (called **operands**) that nproducces a new value. The specific operation to be performed is denoted by a symbol called an **operator**
+
+    - The number of operands that an operator takes as input is called the operator's **arity**.
+
+    - **Unary** operators act on one operand; **Binary** operators act on two operands; **Ternary** ...; **Nullary** ... 
+
+- Chaining Operators
+
+- Return Values and Side Effects
 
 ## 1.10 - Introduction to Expressions
+
+

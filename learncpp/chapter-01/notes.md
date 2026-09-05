@@ -235,7 +235,7 @@
 
 - You should prefer value-initialization, as it initializes the variable to a consistent value
 
-## 1.5 - Introduction to iostream: cout, cin, endl;
+## 1.5 - Introduction to Iostream: cout, cin, endl
 
 - *Best Practice:* Prefer `\n` over `strd::endl` when outputting text to the console
 
@@ -247,48 +247,47 @@
 
     - `>>` is used with `std::cin`, and show the direction that data is moving
 
-## 1.6 - Uninitialized variables and undefined behavior
- 
- 
- 
+## 1.6 - Uninitialized Variables and Undefined Behavior
+
+- Uninitialized Variables
+
+    - When variable that is not initialized is given a memory address to use to store data, the default value of that variable is whatever garbage value happens to already be in that memory address
+
+    - Initialized = The object is given a known value at the point of definition
+
+    - Assignment = The object is given a known valye beyond the point of definition
+
+    - Uninitialized = The object has not been given a known value yet.
+
+- Undefined Behavior
+
+    - **Undefined Behavior** is the result of executing code whose behavior is not well-defined by the C++ language
+
+    - *Rule:* Take care to avoid all situations that result in undefined behavior, such as using unitialized variables
+
+- Implementation-Defined Behavior and Unspecified Behavior
+
+    - A specific compiler and the associated standard library it comes with are called an **implementation**
+
+    - Behavior that is defined by the implementation is called **implementation-defined behavior**
+
+    ```cpp
+    #include <iostream>
+
+    int main()
+    {
+        std::cout <<sizeof(int) << '\n';    // most platforms, will will produce 4, but on others it may produce 2
+        return 0;
+    }
+    ```
+
+    - *Best Practice:* Avoid imoplementation-defined and unspecified behavior whenever possible, as they may cause your program to malfunction on other implementation
 
 
+*Q1:* What is an uninitialized variable? Why should you avoid using them?
 
+- An unitialized variable is a variable that has not been given a value by the program (generally through initialization or assignment). Using the value stored in an unitialized variable will result in undefined behavior
 
+*Q2:* What is undefined behavior, and what can happen if you do something that exhibits undefined behavior?
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Undefined behavior is the result of executing code whose behavior is not well defined by the language. The result can be almost anything, including something that behaves correctly.

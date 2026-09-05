@@ -338,4 +338,18 @@
 
 ## 1.10 - Introduction to Expressions
 
+- Expressions
+
+    - **Expression** is a non-empty sequence of literals, variables, operators, and function calls that calculates a value.
+
+- Expression Statements
+
+- Useless Expression Statements
+
+- Subexpressions, Full Expressions, and Compound Expressions
+
+
+
+
+
 

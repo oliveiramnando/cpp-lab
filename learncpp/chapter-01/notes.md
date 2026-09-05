@@ -302,6 +302,17 @@
 
 ## 1.8 - White Space and Basic Formatting
 
+- Some langauge elements must be whitespace-separated
+
+- Quoted Text takes the amount of whitespace literally
+
+- Using whitespace to format code
+
+- Basic Formatting
+
+- Automatic Formatting
+
+- Style Guides
 
 ## 1.9 - Introduction to Literals and Operators
 

@@ -237,7 +237,7 @@
 
 ## 1.5 - Introduction to Iostream: cout, cin, endl
 
-- *Best Practice:* Prefer `\n` over `strd::endl` when outputting text to the console
+- *Best Practice:* Prefer `\n` over `std::endl` when outputting text to the console
 
 - `operator<<` vs `operator>>`
 
@@ -291,3 +291,19 @@
 *Q2:* What is undefined behavior, and what can happen if you do something that exhibits undefined behavior?
 
 - Undefined behavior is the result of executing code whose behavior is not well defined by the language. The result can be almost anything, including something that behaves correctly.
+
+## 1.7 - Keywords and Naming Identifiers
+
+- Keywords
+
+- Identifier Naming Rules
+
+- Identifier Naming Best Practices
+
+## 1.8 - White Space and Basic Formatting
+
+
+## 1.9 - Introduction to Literals and Operators
+
+
+## 1.10 - Introduction to Expressions

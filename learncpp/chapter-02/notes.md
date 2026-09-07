@@ -85,7 +85,17 @@ int main()
 
 ## 2.3 - Void Functions (non-value returning functions)
 
+- Void return values
 
+- Void Functions don't need a return statement
+
+    - *Best Practice:* Don't put a return statement at the end of a non-value returning function
+
+- Void functions can't be used in expression that require a value
+
+- Returning a value from a void function is a compile error
+
+## 2.4 - Introduction to Function Parameters and Arguments
 
 
 

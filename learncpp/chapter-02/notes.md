@@ -10,7 +10,7 @@
 - An Example of a User-Defined Function
 
     ```cpp
-        returnType functionName() // This is the function header (tells the compiler about the existence of the function)
+    returnType functionName() // This is the function header (tells the compiler about the existence of the function)
     {
         // This is the function body (tells the compiler what the function does)
     }
@@ -25,4 +25,69 @@
 - Nested Functions are not Supported
 
 ## 2.2 - Function return values (value-returning functions)
+
+```cpp
+#include <iostream>
+
+int getValueFromUser()
+{
+    std::cout << "Enter an integer: "
+    int input{};
+    std::cin >> input;
+    return input;
+}
+
+int main()
+{
+    int num { getValueFromUser() };
+    std::cout << num << " doubled is: " << num * 2 << '\n';
+    return 0;
+}
+```
+
+- Return Values
+
+    - When the return statement is executed:
+        
+        - The return expressions is evaluated to produce a value
+
+        - The value produced by the return expression is copied back to the caller. This copy is called the **return value** of the function
+
+        - The function exits, and control returns to the caller
+
+    - The process of returning a copied calue back to the caller is named **return by value**
+
+- Revisiting main()
+    
+    - When the program is executed, the os makes a function call to `main()`. Execution then jumps to the top of `main()`. The statements in `main()` are executed sequentially. Finally, `main()` returns an int value, and program terminates.
+
+    - In C++, there're two special requirements for `main()`:
+        
+        - `main()` is required to return an `int`
+
+        - Explicit functioncalls to `main()` are disallowed
+
+- Status Codes
+
+    - Status code of `0` mean program ran normally; otherwise the number is used to indicate some kind of failure
+
+- A value-returning function that does not return a value will produce undefined behavior
+
+- Function main will implicitly return 0 if no return statement is provided
+
+- Functions can only return a single value
+
+- Function author can decide what the return value means
+
+- Reusing functions
+
+    - DRY = "Don't Repeat Yourself"
+
+## 2.3 - Void Functions (non-value returning functions)
+
+
+
+
+
+
 

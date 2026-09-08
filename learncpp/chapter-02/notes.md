@@ -257,7 +257,109 @@ int main()
     
     - *Key Insight:* Return by value returns a temporary object (that holds a copy of the return value) to the caller.
 
-## 2.6 Why Functions are Useful, and How to Use Them Effectively
+## 2.6 - Why Functions are Useful, and How to Use Them Effectively
+
+- Why use functions
+
+## 2.7 - Forward Declarations
+
+-  The compiler compiles the contents of code files sequentially.
+
+- *Best Practice:* When addressing compilation errors or warnings in your programs, resolve the first issue listed and then compile again
+
+- Option 1: Reorder the function definitions
+
+    - define a function before main
+
+- Option 2: Use a forward declaration
+
+    - A **forward declaration** allows us to tell the compiler about the existence of an identifier *before* actually defining the identifier
+
+    - Use a **function declaration** statement
+
+    ```cpp
+    int add(int x, int y); // function declaration includes return type, name, parameters, and semicolon.  No function body!
+    ```
+
+    ```cpp
+    #include <iostream>
+
+    int add(int x, int y); // forward declaration of add() (using a function declaration)
+    
+    int main()
+    {
+        std::cout << "The sum of 3 and 4 is: " << add(3, 4) << '\n'; // this works because we forward declared add() above
+        return 0;
+    }
+    
+    int add(int x, int y) // even though the body of add() isn't defined until here
+    {
+        return x + y;
+    }
+    ```
+
+    ```cpp
+    int add(int, int); // valid function declaration
+    ```
+
+    - *Best Practice:* Keep the parameter names in your function declarations
+
+- Why forward declarations?
+
+- Forgetting the function body
+
+    - If a forward declaration is made and the function is called, but the program never defines the function, the program will compile okay, but the linker will complain that it can't resolve the function call
+
+- Other types of forward declarations
+
+- Declarations vs. Definitions
+
+    - A **declaration** tells the *compiler* about the *existence* of an identifier and its associated type information.
+
+    ```cpp
+    int add(int x, int y); // tells the compiler about a function named "add" that takes two int parameters and returns an int.  No body!
+    int x;                 // tells the compiler about an integer variable named x
+    ```
+
+    - A **definition** is a declaration that actually implements (for functions and types) or instantiates (for variables) the identifier
+
+    ```cpp
+    // because this function has a body, it is an implementation of function add()
+    int add(int x, int y)
+    {
+        int z{ x + y };   // instantiates variable z
+    
+        return z;
+    }
+    
+    int x;                // instantiates variable x
+    ```
+
+    - Declarations that aren't definitions are called **pure declarations**
+
+    - When the compiuler encounters an identifier, it will check to ensure use of that identifier is valid
+    
+- The One Definition Rule (ODR)
+
+    1. Within a *file*, each function, variable, type, or template in a given scope can only have one definition. Definitions occurring in different scopes (e.g. local variables defined inside different functions, or functions defined inside different namespaces) do not violate this rule.
+
+    2. Within a *program*, each function or variable in a given scope can only have one definition. This rule exists because programs can have more than one file. Functions and variables not visible to the linker are excluded from this rule 
+
+    3. Types, templates, inline functions, and inline variables are allowed to have duplicate definitions in different files, so long as each definition is identical. 
+
+    - Violating part 1 of the ODR will cause the compiler to issue a redefinition error.
+
+    - Violating part 2 will cause the linker to issue a redefinition error
+
+    - Violating part 3 will cause undefined behavior
+
+## 2.8 - Programs With Multiple Code Files
+
+
+
+
+
+
 
 
 

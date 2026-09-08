@@ -185,9 +185,79 @@ int main()
 
     - *Best Practice:* Whena function paramter exists but is not used in the body of the function, do not give it a name. You can optionally put a name inside a comment
 
+## 2.5 - Introduction to Local Scope
 
+- Local Variables
 
+    - Variables defined inside the body of a function are called **local variables**
 
+- Local Variable Lifetime
+
+    - Local variaables are destroyed in the opposite order of creation at the end of the set of curly braces in which it is defined (or for a function parameter, at the end of the function)
+
+    ```cpp
+    int add(int x, int y)
+    {
+        int z{ x + y };
+    
+        return z;
+    } // z, y, and x destroyed here
+    ```
+
+    - An objects's **lifetime** is defined to be the time between its creation and destruction
+
+    - Variable creation and destruction happen when the program is running, not at compile time. Therefore, lifetime is a runtime property
+
+- What happens when an object is destroyed?
+
+    - At some point after destruction, the memory used by the object will be deallocated
+
+- Local Scope (block scope)
+
+    - An identifier's **scope** determines where the identifier can be seen and used within the source code
+
+    - When an identifier can bve seen and used, we say it is **in scope**. When it can not be seen, we can not use it, and we say it is **out of scope**
+
+    - Scope is compile-time property
+
+    ```cpp
+    #include <iostream>
+
+    // x is not in scope anywhere in this function
+    void doSomething()
+    {
+        std::cout << "Hello!\n";
+    }
+    
+    int main()
+    {
+        // x can not be used here because it's not in scope yet
+    
+        int x{ 0 }; // x enters scope here and can now be used within this function
+    
+        doSomething();
+    
+        return 0;
+    } // x goes out of scope here and can no longer be used
+    ```
+
+- "Out of Scope" vs "Going Out of Scope"
+
+- Functional separation
+
+    - *Key Insight:* Names used for function parameters or variables declared in a functional body are only visible within the function that declares them. This means local variables within a function can be named without regard for the names of variables in other functions. This helps keep functions independent.
+
+- Where to define local variables
+
+    - Best practice is that local variables inside the function body should be defined as close to their first use as reasonable
+
+- When to use function parameters vs local variables
+
+- Introduction to temporary objects
+    
+    - *Key Insight:* Return by value returns a temporary object (that holds a copy of the return value) to the caller.
+
+## 2.6 Why Functions are Useful, and How to Use Them Effectively
 
 
 

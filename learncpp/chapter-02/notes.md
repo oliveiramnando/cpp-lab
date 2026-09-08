@@ -97,6 +97,101 @@ int main()
 
 ## 2.4 - Introduction to Function Parameters and Arguments
 
+- Function Paramters and Arguments
+
+    - **Function Parameter** is a variable used in the header of a function
+
+        - They are initialized with a value provided by the caller of the function
+
+    - An **argument** is a value that is passed *from* the caller *to* the function when a function call is made
+
+- How parameters and arguments work together
+
+    - When a function is called, all of the parameters of the function are created as variables, and the value of each of the arguments is *copied* into the matching parameter (using copy initialization).
+
+    - This process is called **pass by value**.
+
+    - Function parameters that utilize pass by value are calle d **value parameters**
+    
+    ```cpp
+    #include <iostream>
+
+    // The values of x and y are passed in by the caller
+    void printValues(int x, int y)
+    {
+        std::cout << x << '\n'
+        std::cout << y << '\n'
+    }
+
+    int main()
+    {
+        printValues(6, 7);  // This function call has two arguments, 6 and 7
+        return 0;
+    }
+    ```
+
+- Using return values as arguments
+
+    ```cpp
+    #include <iostream>
+
+    int getValueFromUser()
+    {
+     	std::cout << "Enter an integer: ";
+    	int input{};
+    	std::cin >> input;
+    
+    	return input;
+    }
+    
+    void printDouble(int value)
+    {
+    	std::cout << value << " doubled is: " << value * 2 << '\n';
+    }
+    
+    int main()
+    {
+    	printDouble(getValueFromUser());
+    
+    	return 0;
+    }
+    ```
+
+- How paramters and return values work together
+
+    ```cpp
+    #include <iostream>
+    
+    // add() takes two integers as parameters, and returns the result of their sum
+    // The values of x and y are determined by the function that calls add()
+    int add(int x, int y)
+    {
+        return x + y;
+    }
+    
+    // main takes no parameters
+    int main()
+    {
+        std::cout << add(4, 5) << '\n'; // Arguments 4 and 5 are passed to function add()
+        return 0;
+    }
+    ```
+
+- Unreferenced parameters and unnamed parameters
+
+    - **Unreferenced Parameters** are paramters that are not used in the body of the function
+
+    - A paramters without a name is called an **unnamed paramter**
+
+    - *Best Practice:* Whena function paramter exists but is not used in the body of the function, do not give it a name. You can optionally put a name inside a comment
+
+
+
+
+
+
+
+
 
 
 
